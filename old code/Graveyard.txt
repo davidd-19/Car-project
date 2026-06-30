@@ -1,0 +1,66 @@
+// uint angleCheck(ROT rotate)
+// {
+//     int angle = (rotate == 0) ? 360 : 1; // Start at edge
+//     int modifier = (rotate == 0) ? -5 : 5; // C or CCW
+//     uint last_distance = 0;
+//     uint current_distance = 0;
+//     int start_angle = angle;
+//     int value;
+
+//     setServoAngle(angle);
+//     sleep_ms(300);        
+
+//     last_distance = ultrasonicF.getDistanceCm();
+
+//     while (true) {
+//         angle += modifier;
+
+//         if (angle < 1 || angle > 360) {
+//             break; // Safety limit
+//         }
+
+//         setServoAngle(angle);
+//         sleep_ms(100);
+
+//         current_distance = ultrasonicF.getDistanceCm();
+
+//         if (current_distance == 0) continue; 
+
+//         if (current_distance > last_distance && last_distance != 0) {
+//             break; // Distance started increasing => passed closest point
+//         }
+//         last_distance = current_distance;
+//     }
+
+//     if (rotate == C){
+//         value = start_angle - angle;
+//     } else {
+//         value = angle - start_angle;
+//     }
+
+//     return value - modifier;  // Return the angle just before it started increasing
+// }
+
+
+// void angleCorrection(ROT rotation){
+//     int angles[5] = {0,0,0,0,0};
+
+//     for (int i = 0; i < 5; i++){
+//         angles[i] = angleCheck(rotation);
+//         Motor_All(RIGHT, 80);
+//         sleep_ms(25);
+//         Motor_Stop_All();
+//     }
+
+//     int sum = 0;
+//     for (int i = 0; i < 5; i++) {
+//     sum += angles[i];
+//     }
+//     int angle = (sum / 5);
+
+//     printf("angle %d", angle);
+
+//     rotate (angle, rotation);
+//     setServoAngle(195);
+//     sleep_ms(1000);
+// }

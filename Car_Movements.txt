@@ -1,0 +1,10 @@
+Move Forward: all Forward
+Move Backward: all Backward
+Move to the right side: A: Forward, B: Backward, C: Backward, D: Forward.
+Move to the lift side: A: Backward, B: Forward, C: Forward, D: Backward.
+Rotate to the right: A & C Forward, B & D Backward
+Rotate to the left: A & C Backward, B & D Forward
+Corner up-right: A & D Forward at full speed, B & C Backward at half speed.
+Corner Down-right: A & D Forward at half speed of B & C that go backward. 
+Corner up-left: A & D Backward at half speed of B & C that go Forward at full speed.
+Corner Down-left: A & D Backward at full speed, B & C Forward at half speed.
